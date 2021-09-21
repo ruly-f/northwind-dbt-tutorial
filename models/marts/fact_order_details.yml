@@ -1,0 +1,39 @@
+version: 2
+
+models:
+
+  - name: fact_order_details
+    columns:
+
+      - name: order_id
+        description: The order natural key.
+        tests: 
+            - not_null
+
+      - name: customer_fk
+        description: The customer foreing key.
+        tests: 
+            - relationships:
+                to: ref('dim_customers')
+                field: customer_sk
+
+      - name: product_fk
+        description: The product foreing key.
+        tests: 
+            - relationships:
+                to: ref('dim_products')
+                field: product_sk                
+
+      - name: shipper_fk
+        description: The shipper foreing key.
+        tests: 
+            - relationships:
+                to: ref('dim_shippers')
+                field: shipper_sk  
+
+      - name: employee_fk
+        description: The employee foreing key.
+        tests: 
+            - relationships:
+                to: ref('dim_employees')
+                field: employee_sk                 

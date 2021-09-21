@@ -1,0 +1,35 @@
+version: 2
+
+sources:
+
+  - name: northwind_elt
+    tables:
+      - name: orders
+        description: One record per order.
+        columns:
+         - name: order_id
+           description: Primary Key of orders table
+           tests: 
+            - unique
+            - not_null
+
+      - name: products
+        description: Esta tabela contém informações sobre os produtos da Northwind.
+
+      - name: shippers
+        description: Esta tabela contém informações sobre os transportadores da Northwind.
+
+      - name: employees
+        description: Esta tabela contém informações sobre os funcionarios da Northwind.
+
+      - name: customers
+        description: Esta tabela contém informações sobre os clientes da Northwind.
+
+      - name: suppliers
+        description: Esta tabela contém informações sobre os fornecedores da Northwind.
+
+      - name: order_details
+        description: Esta tabela contém informações detalhadas das ordens da Northwind.
+
+      - name: categories
+        description: Esta tabela contém informações sobre as categorias de produtos da Northwind.
